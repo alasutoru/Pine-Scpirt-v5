@@ -15,6 +15,6 @@ plot(K, color=color.blue, title="K")
 plot(D, color=color.red, title="D") 
 
 hline(50, color=color.black, linestyle=hline.style_dashed)  
-h1 = hline(UpBand, color=color.red, linestyle=hline.style_dotted)  
-h2 = hline(DownBand, color=color.green, linestyle=hline.style_dotted)  ）
+h1 = hline(UpBand, color=color.green, linestyle=hline.style_dotted)  
+h2 = hline(DownBand, color=color.red, linestyle=hline.style_dotted)  ）
 fill(h1, h2)
