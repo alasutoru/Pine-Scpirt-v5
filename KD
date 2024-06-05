@@ -1,14 +1,5 @@
 //@version=5
-indicator(title="KD指標", shorttitle="KD", overlay=false)
-Length = 9
-DLength = 3
-UpBand = 20
-DownBand = 80
-vFast = ta.stoch(close, high, low, Length)     
-vSlow = ta.sma(vFast, DLength)                 
-vSlow2 = ta.sma(vSlow, DLength)                
-K = vSlow//@version=5
-indicator("KD Indicator with Strength", overlay=false)
+indicator("KD", overlay=false)
 
 // 定義參數
 kLength = input.int(14, title="K Length")
@@ -33,17 +24,14 @@ hline(80, "Overbought", color=color.red, linestyle=hline.style_dotted, linewidth
 hline(20, "Oversold", color=color.green, linestyle=hline.style_dotted, linewidth=1)
 
 // 定義強弱判斷
-isStrong = (K > 80 )
-isWeak = (K < 20 )
+var float prevK = na
+
+isStrong = na(prevK) ? false : (prevK > 80 and K > 20)
+isWeak = na(prevK) ? false : (prevK < 80 and K < 20)
 
 // 背景顏色提示
 bgcolor(isStrong ? color.new(color.red, 90) : na)
 bgcolor(isWeak ? color.new(color.green, 90) : na)
 
-D = vSlow2
-plot(K, color=color.blue, title="K")              
-plot(D, color=color.red, title="D") 
-hline(50, color=color.black, linestyle=hline.style_dashed) 
-h1 = hline(UpBand, color=color.green, linestyle=hline.style_dotted) 
-h2 = hline(DownBand, color=color.red, linestyle=hline.style_dotted)  
-fill(h1, h2)
+// 更新 prevK
+prevK := K
