@@ -1,1 +1,1 @@
-![](https://access-counter.vercel.app/api/counter?alasutoru=github-username)
+![](https://access-counter.vercel.app/api/counter?name=github-alasutoru)
