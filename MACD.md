@@ -1,3 +1,4 @@
+```
 //@version=5
 indicator("MACD with DIF Line", shorttitle="MACD DIF", overlay=false)
 
@@ -29,7 +30,7 @@ histogram = macdLine - signalLine
 
 // 計算histogram的EMA
 histogramEma = ta.ema(histogram, 5)
-
+```
 // 根據強弱分顏色
 color_histogram = (histogram > 0) ? ((histogram > histogramEma) ? color.green : color.lime) : ((histogram < histogramEma) ? color.red : color.maroon)
 
