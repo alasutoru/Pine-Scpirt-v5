@@ -1,3 +1,4 @@
+```
 //@version=5
 indicator("KD", overlay=false)
 
@@ -35,3 +36,4 @@ bgcolor(isWeak ? color.new(color.green, 90) : na)
 
 // 更新 prevK
 prevK := K
+```
