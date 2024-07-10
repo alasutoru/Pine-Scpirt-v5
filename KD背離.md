@@ -1,3 +1,4 @@
+```
 //@version=5
 indicator("KDJ K High Price Divergence Signals", shorttitle="KDJ K High Divergence", overlay=true)
 
@@ -31,3 +32,4 @@ plotshape(series=divergence_down, location=location.abovebar, color=color.red, s
 // plot(K, color=color.blue, title="%K")
 // plot(D, color=color.orange, title="%D")
 // plot(J, color=color.purple, title="%J")
+```
