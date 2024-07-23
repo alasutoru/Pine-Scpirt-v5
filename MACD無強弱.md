@@ -1,5 +1,5 @@
 //@version=5
-indicator("MACD with Strength", overlay=false)
+indicator("MACD", overlay=false)
 
 // MACD settings
 fastLength = input.int(12, title="Fast Length")
